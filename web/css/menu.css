@@ -1,0 +1,85 @@
+/* --- menu styles ---
+note:
+	not all browsers render styles the same way so try out your style sheet
+	on different browsers before publishing;
+*/
+
+/* Nivel 0 de botones */
+.m0l0iout {
+	/* Primer nivel en reposo.Texto Equivalente a botonera SIAU */
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 1.0em;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	margin: 4px 0 0 8px;
+	color: #FFFFFF;
+}
+/* level 0 outer */
+.m0l0oout {
+	/* Primer nivel en reposo.Caja Equivalente a botonera SIAU */
+	text-decoration: none;
+	border: 1px solid #336699;
+	background-color: #336699;
+}
+
+.m0l0iover {
+	/* Primer nivel con raton encima. Texto Equivalente a botonera SIAU */
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 1.0em;
+	text-decoration: underline;
+	text-align: center;
+	vertical-align: middle;
+	margin: 4px 0 0 8px;
+	color: #FFFFFF;
+}
+
+.m0l0oover {
+	/* Primer nivel con raton encima.Caja Equivalente a botonera SIAU */
+	text-decoration: none;
+	border: 1px solid #336699;
+	background-color: #336699;
+}
+
+/**********************/
+/* Nivel 1 de botones */
+/**********************/
+.m0l1iout { /* En reposo.Texto Equivalente a botonera SIAU */
+	font-family: Verdana, Arial, Helvetica;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 1.0em;
+	color: #FFFFFF;
+	z-index: 120;
+}
+
+.m0l1oout { /* En Reposo. Caja Texto Equivalente a botonera SIAU */
+	text-decoration: none;
+	background-color: #336699;
+	border: 1px solid #336699;
+	vertical-align: middle;
+	padding-left: 2px;
+	z-index: 120;
+}
+
+.m0l1iover { /* Raton encima.Texto Equivalente a botonera SIAU */
+	font-family: Verdana, Arial, Helvetica;
+	text-align: left;
+	text-decoration: none;
+	vertical-align: middle;
+	font-size: 1.0em;
+	color: #FFFFFF;
+	z-index: 120;
+}
+
+.m0l1oover { /* Texto Encima. Caja Texto Equivalente a botonera SIAU */
+	text-decoration: none;
+	background-color: #7094B7; /* Color de fondo elementos 2º nivel*/
+	border: 1px solid #336699;
+	padding-left: 2px;
+	z-index: 120;
+}
+
+.tabla_estructura {
+	
+}

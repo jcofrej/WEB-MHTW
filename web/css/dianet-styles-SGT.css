@@ -1,0 +1,2624 @@
+/*	dianet-styles.css - Roche Diagnostics Intranet - DIAnet Portal	*/
+/********************************************************************/
+/*	Author:	 Christiane Schneider, Rainer Wellmann					*/
+/*	Version: 1.0.0													*/
+/*	Date:	 2006-10-01												*/
+/********************************************************************/
+
+/* HomepageColorLevel0: #336666 */
+/* HomepageColorLevel1: #339999 */
+/* HomepageColorLevel2: #99cccc */
+/* HomepageColorLevel3: #ccf0f0 */
+/* HomepageColorLevel4: #eeeeee */
+/* HomepageColorLevel5: # */
+
+/*
+         *** URL no visibles desde fuera Intranet Roche ***
+@import url(http://cnb.dia.roche.com/dianet-cnb-spanish.css);
+@import url(http://cnb.dia.roche.com/dianet-functions.css);
+         ***																						***
+*/
+body {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    height: 100%;
+    overflow-y: auto;
+}
+
+a:link,a:visited,a:hover,a:active {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+img {
+    border: 0 none;
+}
+
+* html #DIAnetContainerContent {
+    height: 1%;
+} /* gegen IEs 3-Pixel-Bug */
+* html #DIAnetContainer {
+    height: 100%;
+}
+
+* html #DIAnetContainerWithTeaser {
+    height: 100%;
+} /* fuer IE (der 'height' sowieso als 'min-height' sieht */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    display: block;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.17em;
+}
+
+h4 {
+    font-size: 1.12em;
+}
+
+h5 {
+    font-size: 0.83em;
+}
+
+h6 {
+    font-size: 0.75em;
+}
+
+/* DIAnet Container */
+#DIAnetContainer {
+    border-left: 199px solid #99cccc;
+    min-height: 100%;
+    margin: 0px;
+}
+
+#DIAnetContainerWithTeaser {
+    border-left: 199px solid #99cccc;
+    min-height: 100%;
+    margin: 0px 223px 0px 0px;
+}
+
+#DIAnetClearHeader {
+    height: 80px;
+}
+
+#DIAnetContainerContentLeft {
+    background-color: #99cccc;
+    border-right: 1px solid #ffffff;
+    float: left;
+    margin-left: -199px;
+    margin-top: 0px;
+    padding-bottom: 10px;
+    position: relative;
+    width: 199px;
+    height: 675px;
+} /* IE 5 erwartet margin-left:-198px; */
+#DIAnetContainerContentRight {
+    border-right: 3px solid #ffffff;
+    float: right;
+    margin-top: 20px;
+    margin-right: -223px;
+    padding: 0px;
+    position: relative;
+    width: 220px;
+}
+
+#DIAnetContainerContent {
+    padding-left: 20px;
+    padding-top: 10px;
+    position: relative;
+    margin-right: 10px;
+}
+
+#DIAnetContainerHeader {
+    background-color: #336666;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 15;
+}
+
+/* DIAnet Header */
+#DIAnetImageLanguage {
+    position: absolute;
+    top: 0px;
+    left: 199px;
+    border-left: 1px solid #ffffff;
+}
+
+#DIAnetImageLanguage p,#DIAnetBrandLogo p,#DIAnetSearchPhonebook p {
+    display: none;
+}
+
+#DIAnetImageLanguage div {
+    background: #ffffff;
+    background-image: url(/MWEB/imagenes/image-language_aPP_1.png);
+    background-repeat: repeat;
+    border-right: 1px solid #ffffff;
+    height: 80px;
+}
+
+#DIAnetTopNavigation {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    background: #336666;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    height: 25px;
+    width: 100%;
+}
+
+#DIAnetTopNavigation p {
+    display: none;
+}
+
+#DIAnetLinks {
+    width: 200px;
+}
+
+#DIAnetLinks ul li {
+    background-color: #339999;
+    display: inline;
+    float: left;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#DIAnetLinks ul li a,#DIAnetLinks ul li a:link,#DIAnetLinks ul li a:visited,#DIAnetLinks ul li a:active,#DIAnetLinks ul li a:hover,#DIAnetLinks ul li a:visited:hover
+{
+    border-right: 1px solid #ffffff;
+    line-height: 25px;
+    padding-top: 6px;
+    padding-right: 7px;
+    padding-bottom: 6px;
+    padding-left: 8px;
+    text-decoration: none;
+}
+
+#DIAnetLinks ul li a,#DIAnetLinks ul li a:link,#DIAnetLinks ul li a:visited,#DIAnetLinks ul li a:active
+{
+    color: #ffffff;
+}
+
+#DIAnetLinks ul li a:link:hover {
+    background: #ffffff;
+    color: #339999;
+}
+
+#DIAnetHomepageTopLinksHome {
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    width: 550px;
+    height: 25px;
+    background: #336666;
+}
+
+#DIAnetHomepageTopLinksHome p {
+    display: none;
+}
+
+#DIAnetHomepageTopLinksHome ul li {
+    background-color: #336666;
+    display: inline;
+    float: left;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#DIAnetHomepageTopLinksHome ul li a,#DIAnetHomepageTopLinks ul li a:link,#DIAnetHomepageTopLinks ul li a:visited,#DIAnetHomepageTopLinks ul li a:active,#DIAnetHomepageTopLinks ul li a:hover
+{
+    border-right: 1px solid #ffffff;
+    line-height: 25px;
+    padding-top: 6px;
+    padding-right: 5px;
+    padding-bottom: 6px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+#DIAnetHomepageTopLinksHome ul li a,#DIAnetHomepageTopLinks ul li a:link,#DIAnetHomepageTopLinks ul li a:visited
+{
+    color: #ffffff;
+}
+
+#DIAnetHomepageTopLinksHome ul li a:link:hover,#DIAnetHomepageTopLinks ul li a:visited:hover,#DIAnetHomepageTopLinks ul li a:active
+{
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+}
+
+#DIAnetQuickLinks {
+    background-color: #336666;
+    border-right: 1px solid #ffffff;
+    height: 19px;
+    position: absolute;
+    top: 0px;
+    left: 200px;
+    padding-top: 4px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+}
+
+#DIAnetQuickLinks p {
+    display: none;
+}
+
+#DIAnetQuickLinks ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#DIAnetQuickLinks ul li {
+    background-color: #ffffff;
+    border: 1px solid #999999;
+    display: inline;
+    float: left;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 9pt;
+    font-weight: normal;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: 124px;
+}
+
+#DIAnetQuickLinks ul li a,#DIAnetQuickLinks ul li a:link,#DIAnetQuickLinks ul li a:visited,#DIAnetQuickLinks ul li a:active,#DIAnetQuickLinks ul li a:hover
+{
+    background-image: url(/MWEB/imagenes/icon-dropdown.gif);
+    background-repeat: no-repeat;
+    background-position: 108px;
+    color: #000000;
+    cursor: hand;
+    display: block;
+    height: 15px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+#QuickLinks {
+    position: absolute;
+    top: 20px;
+    left: 205px;
+    visibility: hidden;
+    z-index: 500;
+}
+
+#QuickLinks p {
+    display: none;
+}
+
+#QuickLinks div {
+    background: #ffffff;
+    border: 1px solid #999999;
+    padding-top: 2px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    width: 114px;
+    overflow: auto;
+}
+
+#QuickLinks div a,#QuickLinks div a:link,#QuickLinks div a:visited,#QuickLinks div a:active
+{
+    color: #000000;
+    display: block;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 9pt;
+}
+
+#QuickLinks div a:link:hover {
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#DIAnetHomepageTopLinks {
+    position: absolute;
+    top: 0px;
+    left: 337px;
+    width: 550px;
+}
+
+#DIAnetHomepageTopLinks p {
+    display: none;
+}
+
+#DIAnetHomepageTopLinks ul li {
+    background-color: #336666;
+    display: inline;
+    float: left;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#DIAnetHomepageTopLinks ul li a,#DIAnetHomepageTopLinks ul li a:link,#DIAnetHomepageTopLinks ul li a:visited,#DIAnetHomepageTopLinks ul li a:active,#DIAnetHomepageTopLinks ul li a:hover
+{
+    border-right: 1px solid #ffffff;
+    line-height: 25px;
+    padding-top: 6px;
+    padding-right: 5px;
+    padding-bottom: 6px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+#DIAnetHomepageTopLinks ul li a,#DIAnetHomepageTopLinks ul li a:link,#DIAnetHomepageTopLinks ul li a:visited
+{
+    color: #ffffff;
+}
+
+#DIAnetHomepageTopLinks ul li a:link:hover,#DIAnetHomepageTopLinks ul li a:visited:hover,#DIAnetHomepageTopLinks ul li a:active
+{
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* DIAnet Branding, Searchtoolbox, Local Search */
+#DIAnetContainerSearchtoolbox {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+#DIAnetBrandLogo {
+    background-color: #ffffff;
+    border: 1px solid #b1bbdd;
+    text-align: center;
+}
+
+#DIAnetSearch {
+    padding-top: 8px;
+    padding-bottom: 9px;
+    width: 100%;
+}
+/* Abstandhalter nach oben zum Brand Logo und nach unten zum Homepagemenue */
+#DIAnetSearchtoolbox {
+    padding-bottom: 1px;
+    padding-left: 11px;
+}
+
+#DIAnetSearchLocal {
+    margin-top: 8px;
+    margin-left: 12px;
+    margin-bottom: 0px;
+}
+
+#DIAnetSearch p,#DIAnetSearchtoolbox p,#DIAnetSearchLocal p {
+    display: none;
+}
+
+#DIAnetSearchDivider {
+    margin-bottom: -14px;
+}
+
+#DIAnetSearchDivider hr {
+    color: #ffffff;
+    height: 1px;
+    margin-top: -34px;
+    left: 9px;
+    width: 179px;
+}
+
+#DIAnetSearchMenu {
+    background: #ffffff;
+    background-image: url(/MWEB/imagenes/icon-dropdown.gif);
+    background-repeat: no-repeat;
+    background-position: 133px;
+    border: 1px solid #999999;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 9pt;
+    font-weight: normal;
+    margin-top: -13px;
+    margin-bottom: 12px;
+    margin-left: 11px;
+    width: 149px;
+}
+
+#DIAnetSearchMenu a {
+    color: #000000;
+    height: 17px;
+    padding-top: 1px;
+    padding-left: 5px;
+    text-decoration: none;
+}
+
+#DIAnetSearchDropDown {
+    position: absolute;
+    top: 79px;
+    left: 11px;
+    background: #ffffff;
+    border: 1px solid #999999;
+    padding-top: 2px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    width: 139px;
+    visibility: hidden;
+    z-index: 10;
+}
+
+#DIAnetSearchDropDown p {
+    display: none;
+}
+
+#DIAnetSearchDropDown a,#DIAnetSearchDropDown div a:link,#DIAnetSearchDropDown div a:visited,#DIAnetSearchDropDown div a:active
+{
+    color: #000000;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 9pt;
+}
+
+#DIAnetSearchDropDown a:link:hover {
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* DIAnet Left Navigation */
+#DIAnetLeftNavigation {
+    background-color: #99cccc;
+    color: #000000;
+    float: left;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+    height: 100%;
+    width: 100%;
+}
+
+#DIAnetLeftNavigation p {
+    display: none;
+}
+
+#DIAnetLeftNavigation ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#DIAnetLeftNavigation ul li {
+    float: left;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+#DIAnetLeftNavigation ul li a {
+    border-bottom: 1px solid #ffffff;
+    color: #000000;
+    display: block;
+    font-size: 0.83em;
+    font-weight: normal;
+    padding-top: 0.4em;
+    padding-right: 11px;
+    padding-bottom: 0.4em;
+    padding-left: 11px;
+    text-decoration: none;
+}
+
+#DIAnetLeftNavigation ul ul li a {
+    background-color: #ccf0f0;
+    color: #000000;
+    padding-left: 29px;
+}
+
+#DIAnetLeftNavigation ul ul ul li a {
+    background-color: #eeeeee;
+    color: #000000;
+    padding-left: 44px;
+}
+
+#DIAnetLeftNavigation ul li a.ActiveLink {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+}
+
+#DIAnetLeftNavigation ul li a.ActiveLink:hover {
+    background-color: #339999;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#DIAnetLeftNavigation ul li a.home,#DIAnetLeftNavigation ul li a.home:visited
+{
+    background-image: url(/MWEB/imagenes/dianet-home.gif);
+    background-position: 12px 12px;
+    background-repeat: no-repeat;
+    color: #000000;
+    font-size: 1em;
+    font-weight: bold;
+    padding-top: 12px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    padding-left: 37px;
+    line-height: 1.2em;
+    border-top: 1px solid #ffffff;
+}
+
+#DIAnetLeftNavigation ul li a.home:hover {
+    background-image: url(/MWEB/imagenes/dianet-home-hover.gif);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#DIAnetLeftNavigation ul li a:hover {
+    background-color: #339999;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+#DIAnetLeftNavigation ul li a.SublevelLink,#DIAnetLeftNavigation ul ul li a.SublevelLink,#DIAnetLeftNavigation ul ul ul li a.SublevelLink
+{
+    background-image: url(/MWEB/imagenes/arrow-transparent-double.gif);
+    background-position: 185px 12px;
+    background-repeat: no-repeat;
+    color: #000000;
+}
+
+#DIAnetLeftNavigation ul li a.SublevelLink:hover,#DIAnetLeftNavigation ul ul li a.SublevelLink:hover,#DIAnetLeftNavigation ul ul ul li a.SublevelLink:hover
+{
+    background-image: url(/MWEB/imagenes/arrow-transparent-double-hover.gif);
+    color: #ffffff;
+}
+
+/* DIAnetBreadCrumbs */
+#DIAnetBreadCrumbs {
+    border-bottom: 0px solid #999999;
+    position: relative;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 0.7em;
+    margin-bottom: 10px;
+    padding-bottom: 2px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#DIAnetBreadCrumbs .home,#DIAnetBreadCrumbs a.home,#DIAnetBreadCrumbs a.home:link
+{
+    background-image: none;
+    color: #000000;
+    padding-left: 1px;
+    text-decoration: none;
+}
+
+#DIAnetBreadCrumbs a.home:hover {
+    color: #336666;
+    text-decoration: underline;
+}
+
+#DIAnetBreadCrumbs a,#DIAnetBreadCrumbs a:link {
+    color: #000000;
+    text-decoration: none;
+}
+
+#DIAnetBreadCrumbs a:hover {
+    color: #336666;
+    text-decoration: underline;
+}
+
+#DIAnetBreadCrumbs a.ActiveLink {
+    font-weight: bold;
+    color: #336666;
+    text-decoration: none;
+}
+
+#DIAnetBreadCrumbs a.ActiveLink:hover {
+    text-decoration: underline;
+}
+
+#DIAnetBreadCrumbs img {
+    margin-bottom: 1px;
+}
+
+#DIAnetBreadCrumbs br {
+    display: none;
+}
+
+/* DIAnet Print Icon */
+#DIAnetPrintContent {
+    float: right;
+}
+
+#DIAnetPrintContent img {
+    margin-right: 3px;
+    margin-top: 3px;
+    background-color: #ffffff;
+}
+
+#DIAnetPrintContent a.ToolTip {
+    position: relative;
+    z-index: 20;
+    color: #000000;
+    text-decoration: none;
+    cursor: help;
+}
+
+#DIAnetPrintContent a.ToolTip:hover {
+    z-index: 25;
+    background-color: #eeeeee;
+    text-decoration: none;
+}
+
+#DIAnetPrintContent a.ToolTip span {
+    display: none;
+}
+
+#DIAnetPrintContent a.ToolTip:hover span {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    border: 1px solid #666666;
+    background-color: #eeeeee;
+    color: #000000;
+    text-align: left;
+    padding-left: 5px;
+    padding-top: 1px;
+    padding-right: 5px;
+    padding-bottom: 1px;
+    font-size: 0.7em;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* DIAnet Teaser */
+#DIAnetTeaser {
+    background-color: #eeeeee;
+    font-size: 100%;
+    margin-right: 3px;
+    width: 220px;
+}
+
+#DIAnetTeaser div {
+    background-color: transparent;
+    border-bottom: 10px solid #ffffff;
+    width: 100%;
+}
+
+#DIAnetTeaser h5 {
+    font-weight: bold;
+    overflow: hidden;
+    margin: 3px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+#DIAnetTeaser p {
+    display: block;
+    font-size: 0.7em;
+    font-weight: normal;
+    margin: 3px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+.DIAnetTeaserTitle {
+    background: #336666;
+}
+
+#DIAnetTimezones {
+    height: 115px;
+}
+
+#DIAnetWeatherTimeFrame {
+    height: 145px;
+}
+
+/* DIAnet Module Navigation */
+#DIAnetModuleNavigation {
+    float: left;
+    margin-top: 10px;
+}
+
+#DIAnetModuleNavigation p {
+    display: none;
+}
+
+#DIAnetModuleNavigation ul {
+    width: 100%;
+}
+
+#DIAnetModuleNavigation ul li {
+    display: inline;
+    float: left;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    list-style: none;
+}
+
+#DIAnetModuleNavigation ul li a {
+    border-bottom: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    float: left;
+    height: 20px;
+    padding-top: 4px;
+    padding-right: 13px;
+    padding-left: 13px;
+    text-decoration: none;
+}
+
+#DIAnetModuleNavigation ul li a.DIAnetModuleSelected,#DIAnetModuleNavigation ul li a.DIAnetModuleSelected:visited
+{
+    background: #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    color: #000000;
+}
+
+#DIAnetModuleNavigation ul li a.DIAnetModuleUnselected {
+    background: #aaaaaa;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+#DIAnetModuleNavigation ul li a.DIAnetModuleUnselected:hover {
+    background: #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    color: #000000;
+}
+
+/* DIAnet Module Content */
+#DIAnetModuleContent {
+    background: #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 0.83em;
+}
+
+#DIAnetModuleContent p {
+    background: #ffffff;
+    border: 1px solid #000000;
+    white-space: nowrap;
+    width: 100%;
+}
+
+#DIAnetModuleDetails {
+    background: #ffffff;
+    border: 2px solid #eeeeee;
+    padding: 10px;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 1em;
+    float: left;
+}
+
+/* DIAnet Content Elements Two Columns */
+#DIAnetContentTwoColumns .ColumnLeft {
+    margin-right: 48%;
+    padding-right: 10px;
+    vertical-align: top;
+}
+
+#DIAnetContentTwoColumns .ColumnRight {
+    float: right;
+    padding-left: 10px;
+    width: 48%;
+    vertical-align: top;
+}
+
+/* DIAnet Copyright Startpage */
+#DIAnetCopyrightStartpage {
+    clear: left;
+    position: relative;
+    top: 23px;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    width: 100%;
+}
+
+#DIAnetCopyrightStartpage p {
+    display: none;
+}
+
+#DIAnetCopyrightStartpage span {
+    display: block;
+    padding: 10px;
+}
+
+/* DIAnet Content Elements */
+#DIAnetContent {
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 0.83em;
+}
+
+.dianet-content {
+    font-weight: normal;
+    color: #000000;
+    text-decoration: none;
+    margin-top: 0px;
+}
+
+.dianet-content-title {
+    font-size: 1.12em;
+    font-weight: bold;
+    color: #999999;
+    text-decoration: none;
+    margin-top: 0px;
+}
+
+.dianet-content-title-startpage {
+    font-size: 1.75em;
+    font-weight: bold;
+    color: #999999;
+    text-decoration: none;
+    margin-top: 0px;
+}
+
+.dianet-content-last-update {
+    font-size: 0.7em;
+    font-weight: normal;
+    color: #666666;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-bottom: 8px;
+}
+
+a.dianet-link {
+    color: #336666;
+    margin-top: 0px;
+}
+
+a.dianet-link:hover {
+    text-decoration: underline;
+}
+
+#DIAnetContent a.dianet-copyright,a.dianet-copyright {
+    color: #336666;
+    font-size: 1em;
+    margin-top: 0px;
+    text-decoration: none;
+}
+
+#DIAnetContent a.dianet-copyright:hover,a.dianet-copyright:hover {
+    text-decoration: underline;
+}
+
+.dianet-copyright {
+    font-size: 0.7em;
+    color: #000000;
+    text-decoration: none;
+    margin-top: 0px;
+}
+
+.dianet-copyright:hover {
+    text-decoration: underline;
+}
+
+.dianet-container-tabled-teaser {
+    margin-bottom: 20px;
+}
+
+.dianet-tabled-teaser-column-right {
+    float: right;
+    font-size: 0.83em;
+    padding: 0;
+    width: 220px;
+}
+
+.dianet-tabled-teaser-column-left {
+    margin-right: 220px;
+    padding: 0;
+}
+
+.dianet-tabled-teaser-column-left img {
+    border: 0px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+
+.dianet-tabled-teaser-clearer {
+    clear: right;
+}
+
+.dianet-tabled-teaser-scroll {
+    position: relative; 
+    background-color: #ff9; 
+    border: 1px solid #ddd; 
+    height: 400px;
+    width: auto;
+    overflow-y: scroll;
+}
+
+.dianet-teaser {
+    background-color: #eeeeee;
+    float: right;
+    margin-bottom: 3px;
+    padding-top: 8px;
+    padding-right: 5px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+    width: 200px;
+}
+
+.dianet-teaser-title {
+    font-weight: bold;
+    margin: 3px;
+}
+
+.dianet-teaser-content {
+    display: block;
+    font-weight: normal;
+    margin: 3px;
+}
+
+.dianet-area-login {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.dianet-box-acess {
+    width: 220px;
+    border: 1px solid #666666;
+    padding: 15px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.dianet-box-login {
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+}
+
+.dianet-box-login-idioma {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    padding: 3px;
+}
+
+.dianet-box-alert {
+    border: 1px solid #CCCCCC;
+    background-color: #FFFF99;
+    padding: 3px;
+    font-size: 0.7em;
+    width: 90px;
+    text-align: center;
+}
+
+/* .itens-agency-si-border es IDENTICO a .itens-agency. Se ha creado porque el JS lo necesitaba. */
+.dianet-mrg-top-5 {
+    margin-top: 5px
+}
+
+.dianet-mrg-top-10 {
+    margin-top: 10px
+}
+
+.dianet-mrg-top-15 {
+    margin-top: 15px
+}
+
+.dianet-mrg-top-20 {
+    margin-top: 20px
+}
+
+.dianet-mrg-top-30 {
+    margin-top: 30px
+}
+
+.dianet-mrg-bottom-5 {
+    margin-bottom: 5px
+}
+
+.dianet-mrg-bottom-10 {
+    margin-bottom: 10px
+}
+
+.dianet-mrg-bottom-15 {
+    margin-bottom: 15px
+}
+
+.dianet-mrg-bottom-20 {
+    margin-bottom: 20px
+}
+
+.dianet-mrg-bottom-20 {
+    margin-bottom: 30px
+}
+
+/* Estilo aplicado a la cabecera de un listado cuando ordenamos por ese campo */
+.campoOrdenacion {
+    color: #0000FF;
+    font-weight: bold;
+}
+
+.campoOrdenacion a:link,a:visited,a:hover,a:active {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+.dianet-div-left-width {
+    width: 39%;
+}
+
+.dianet-div-right-width {
+    width: 60%;
+}
+
+.dianet-text-right {
+    text-align: right;
+}
+
+.dianet-text-left {
+    text-align: left;
+}
+
+.dianet-box-login-field {
+    width: 180px;
+    margin-bottom: 8px;
+}
+
+.dianet-box-login-field {
+    width: 180px;
+}
+
+.dianet-login-field {
+    width: 180px;
+}
+
+.dianet-div-align-left {
+    float: left;
+    display: block;
+    margin-left: 10px;
+}
+
+.dianet-div-align-right {
+    float: right;
+    display: block;
+}
+
+.dianet-div-clear {
+    clear: both;
+    display: block;
+}
+
+.dianet-content-listado {
+    font-size: 0.7em;
+    font-weight: normal;
+    color: #666666;
+    text-decoration: none;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+
+.boton {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #333333;
+    line-height: 14px;
+    text-decoration: none;
+    text-align: center;
+    width: auto;
+    background-image: url(/MWEB/imagenes/pixel_boto_gris.gif);
+    border-right: #666666 1px solid;
+    border-top: #666666 1px solid;
+    border-left: #666666 1px solid;
+    border-bottom: #666666 1px solid;
+    color: #333333;
+    background-color: #ffffff;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.errorMsgOriginal {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    padding: 3px;
+    background: #FFFFCC;
+    color: #990000;
+    font-size: 75%;
+}
+
+.errorMsgBlank {
+    text-align: center;
+    background-color: #FFFFFF;
+    color: #990000;
+    font-size: 12px;
+}
+
+.errorMsg {
+    text-align: center;
+    background-color: #FFFFCC;
+    color: #990000;
+    font-size: 12px;
+}
+
+/* Estilo para indicar que el servidor estar desbloqueado */
+.estado-servidor-unlock {
+    background: #FFFFFF;
+    color: #FFFFFF;
+    font-size: 12px;
+}
+
+/* Estilo para indicar que el servidor estar bloqueado */
+.estado-servidor-lock {
+    background: #FFFFCC;
+    color: #FF0000;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Estilo para indicar las opciones de una select que est�n seleccionadas (pej.
+         los servicios asociados a una agencia) */
+.optionSelected {
+    color: red;
+}
+
+/*
+Estilo a aplicar aquellos campos <input> del formulario de los que queremos hacer
+submit pero que queremos que NO tengan aspecto de campos input (o sea, que se 
+parezcan a <div>)
+Lo ideal es que este estilo pudiera establecer la propiedad "disabled=true", pero
+parece que no puede ser.
+*/
+.inputFieldShowAsDiv {
+    border: 0px;
+    color: #000000;
+    font-size: 11px;
+    background-color: #FFFFFF;
+}
+
+.splashClass {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    display: block;
+}
+
+.estadoServidorDivClass {
+    background: url('/MWEB/imagenes/uploadBg.png') repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    display: block;
+}
+
+.withBorderClass {
+    border: 1px solid #CCCCCC;
+    padding: 12px 5px 12px 5px;
+    text-align: left;
+}
+
+/************************ Calendar element styles *****************************/
+.yui-calcontainer {
+    position: relative;
+    background-color: #336666;
+    border: 1px solid #cccccc;
+    float: left;
+    overflow: hidden;
+}
+
+.yui-calcontainer iframe {
+    position: absolute;
+    border: none;
+    margin: 0;
+    padding: 0;
+    left: -1px;
+    top: -1px;
+    z-index: 0;
+    width: 50em;
+    height: 50em;
+}
+
+.yui-calcontainer.multi {
+    padding: 0;
+}
+
+.yui-calcontainer.multi .groupcal {
+    padding: 5px;
+    background-color: transparent;
+    z-index: 1;
+    float: left;
+    position: relative;
+    border: none;
+}
+
+.yui-calcontainer .title {
+    font: 100% sans-serif;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 5px;
+    height: 25px;
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    z-index: 1;
+}
+
+.yui-calcontainer .close-icon {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    border: none;
+    z-index: 1;
+}
+
+.yui-calcontainer .calclose {
+    background: url("/MWEB/imagenes/close.gif") no-repeat;
+    width: 17px;
+    height: 13px;
+    cursor: pointer;
+}
+
+.yui-calendar {
+    text-align: center;
+    border-spacing: 0;
+    border-collapse: separate;
+    position: relative;
+    border: 1px solid #CCCCCC;
+}
+
+.yui-calcontainer.withtitle {
+    padding-top: 1.5em;
+}
+
+.yui-calendar .calnavleft {
+    position: absolute;
+    cursor: pointer;
+    top: 2px;
+    bottom: 0;
+    width: 9px;
+    height: 12px;
+    left: 2px;
+    z-index: 1;
+    background: url("/MWEB/imagenes/leftArrow.gif") no-repeat;
+}
+
+.yui-calendar .calnavright {
+    position: absolute;
+    cursor: pointer;
+    top: 2px;
+    bottom: 0;
+    width: 9px;
+    height: 12px;
+    right: 2px;
+    z-index: 1;
+    background: url("/MWEB/imagenes/rightArrow.gif") no-repeat;
+}
+
+.yui-calendar td.calcell {
+    padding: .1em .2em;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+}
+
+.yui-calendar td.calcell a {
+    text-decoration: none;
+}
+
+.yui-calendar td.calcell.today {
+    border: 1px solid #CCFFFF;
+}
+
+.yui-calendar td.calcell.oom {
+    color: #EEEEEE;
+    cursor: default;
+    background-color: #EEEEEE;
+}
+
+.yui-calendar td.calcell.selected {
+    color: #0000FF;
+    /*background-color:#0000FF;*/
+    border: 1px solid #0000FF;
+}
+
+.yui-calendar td.calcell.calcellhover {
+    cursor: pointer;
+    color: #000000;
+    background-color: #FFFFFF;
+    border: 1px solid #0000FF;
+}
+
+.yui-calendar td.calcell.calcellhover a {
+    color: #0000FF;
+}
+
+.yui-calendar td.calcell.restricted {
+    text-decoration: line-through;
+}
+
+.yui-calendar td.calcell.previous {
+    color: #CCC;
+}
+
+.yui-calendar td.calcell.highlight1 {
+    background-color: #CCFF99;
+}
+
+.yui-calendar td.calcell.highlight2 {
+    background-color: #99CCFF;
+}
+
+.yui-calendar td.calcell.highlight3 {
+    background-color: #FFCCCC;
+}
+
+.yui-calendar td.calcell.highlight4 {
+    background-color: #CCFF99;
+}
+
+.yui-calendar .calhead {
+    vertical-align: middle;
+    background-color: #FFF;
+}
+
+.yui-calendar .calheader {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.yui-calendar .calheader img {
+    border: none;
+}
+
+.yui-calendar .calweekdaycell {
+    color: #666;
+    font-weight: normal;
+    text-align: center;
+    width: 1.5em;
+}
+
+.yui-calendar .calfoot {
+    background-color: #EEE;
+}
+
+.yui-calendar .calrowhead,.yui-calendar .calrowfoot {
+    color: #666;
+    font-size: 9px;
+    font-style: italic;
+    font-weight: normal;
+    width: 15px;
+}
+
+.yui-calendar .calrowhead {
+    border-right-width: 2px;
+}
+/************************ Calendar element styles *****************************/
+
+/* Estilos para la pantalla de algoritmo*/
+.cuadro {
+    border: thin solid #000;
+    width: 30%;
+    margin-top: 10%;
+    margin-left: 30%;
+    padding: 20px
+}
+
+.cuadro ul {
+    list-style-type: none;
+}
+
+#titleDiv {
+    position: relative;
+    top: -30px;
+    left: -15px;
+    z-index: 10;
+    background-color: #FFF;
+    opacity: 1;
+    width: 70%
+}
+
+.botonLogin {
+    width: 211px;
+    background-color: #FFFFFF;
+    background-image: url("/MWEB/imagenes/pixel_boto_gris.gif");
+    border-color: #666666;
+    border-right: 1px solid #666666;
+    border-style: solid;
+    border-width: 1px;
+    color: #333333;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#imagenPortada {
+    margin: 175px 0 0 150px;
+}
+
+#tituloPortada {
+    color: #D8D8D8;
+    font-size: 100px;
+    text-align: center;
+}
+#tituloPortadaerror {
+    color: #D8D8D8;
+    font-size: 30px;
+    text-align: left;
+}
+
+/** Ordenes de entrada **/
+#DIAnetTableFiltreOrdenes {
+    background-color: #CCCCCC;
+    width: auto;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#DIAnetTableFiltreOrdenes th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #CCFFFF;
+    padding: 3px;
+}
+
+#DIAnetTableFiltreOrdenes td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFFF;
+    padding: 3px;
+    height: 18px;
+}
+
+#DIAnetTableFiltreOrdenes  th a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#DIAnetTableListadoOrdenes {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+}
+
+#DIAnetTableListadoOrdenes  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableListadoOrdenes  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFFF;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableListadoOrdenes  td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+/** Proveedores**/
+#DIAnetTableFiltreProveedores {
+    background-color: #CCCCCC;
+    width: auto;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#DIAnetTableFiltreProveedores th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #CCFFFF;
+    padding: 3px;
+}
+
+#DIAnetTableFiltreProveedores td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFFF;
+    padding: 3px;
+    height: 18px;
+}
+
+#DIAnetTableListadoProveedores {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+}
+
+#DIAnetTableListadoProveedores  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableListadoProveedores  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFFF;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableListadoProveedores  td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+/** detalle OE **/
+#DIAnetTableDetalleOrdenes {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+#DIAnetTableDetalleOrdenes  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableDetalleOrdenes  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #EAEAEA;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableProductosOrdenes {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#DIAnetTableProductosOrdenes  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableProductosOrdenes  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: #FFFFFF;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableProductosOrdenes  td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#DIAnetTableValoresAgregadosOrdenes {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#DIAnetTableValoresAgregadosOrdenes  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableValoresAgregadosOrdenes  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: #FFFFFF;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+/** Articulos */
+#DIAnetTableFiltreArticulos {
+    background-color: #CCCCCC;
+    width: auto;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#DIAnetTableFiltreArticulos th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #CCFFFF;
+    padding: 3px;
+}
+
+#DIAnetTableFiltreArticulos td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFFF;
+    padding: 3px;
+    height: 18px;
+}
+
+#DIAnetTableListadoArticulos {
+    background-color: #CCCCCC;
+    width: auto;
+    margin-left: 10px;
+}
+
+#DIAnetTableListadoArticulos  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableListadoArticulos  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFFF;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableListadoArticulos  td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#etiquetasTabDetalle {
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+#etiquetasTabDetalle span a {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    color: #0000FF;
+    text-decoration: none;
+    padding: 0 50px 0 50px;
+}
+
+#etiquetaTabProductosDetalle {
+    background-color: #EAEAEA;
+    color: #FFFFFF;
+}
+
+#tabProductosDetalle {
+    border: 1px solid black;
+    display: block;
+    height: auto;
+    margin-left: 10px;
+    padding: 15px 15px 50px 15px;
+    width: 94%;
+}
+
+#tabValoresDetalle {
+    border: 1px solid black;
+    display: block;
+    height: auto;
+    margin-left: 10px;
+    padding: 15px 15px 50px 15px;
+    width: 94%;
+}
+
+/** Alta OE **/
+#DIAnetTableAltaOrdenes {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+#DIAnetTableAltaOrdenes  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableAltaOrdenes  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #EAEAEA;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableAltaOrdenes th a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#DIAnetTableProductosAlta {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+#DIAnetTableProductosAlta  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableProductosAlta  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: #FFFFFF;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableProductosAlta  th a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#DIAnetTableProductosAlta  td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#DIAnetTableNuevoProductosAlta {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#DIAnetTableNuevoProductosAlta  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableNuevoProductosAlta  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: #FFFFFF;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+/* #3587 se esconde la columna numero linea */ 
+#DIAnetTableNuevoProductosAltaColunmaNumLinea {
+    display: none;
+    visibility:hidden;
+}
+
+#DIAnetTableNuevoProductosAlta  th a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#DIAnetTableNuevoProductosAlta  td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#DIAnetTableValoresAgregadosAlta {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#DIAnetTableValoresAgregadosAlta  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableValoresAgregadosAlta td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: #FFFFFF;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableDocumentacionAlta {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#DIAnetTableDocumentacionAlta th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableDocumentacionAlta td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: #FFFFFF;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableDocumentacionAlta td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#etiquetasTabAlta {
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+#etiquetasTabAlta span a {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    color: #0000FF;
+    text-decoration: none;
+    padding: 0 50px 0 50px;
+}
+
+#etiquetaTabProductosAlta {
+    background-color: #EAEAEA;
+    color: #FFFFFF;
+}
+
+#tabProductosAlta {
+    border: 1px solid black;
+    display: block;
+    height: auto;
+    margin-left: 10px;
+    padding: 15px 15px 50px 15px;
+    width: 94%;
+}
+
+#tabValoresAlta {
+    border: 1px solid black;
+    display: block;
+    height: auto;
+    margin-left: 10px;
+    padding: 15px 15px 50px 15px;
+    width: 94%;
+}
+
+#tabDocumentacionAlta {
+    border: 1px solid black;
+    display: block;
+    height: auto;
+    margin-left: 10px;
+    padding: 15px 15px 50px 15px;
+    width: 94%;
+}
+
+/* Paginacion */
+.dianet-nav-listado {
+    margin-right: 5px;
+    background-color: #FFFF99;
+    font-size: 12px;
+    padding: 3px;
+    border: 1px solid #CCCCCC;
+    color: #000000 !important;
+}
+
+.dianet-nav-listado-selected {
+    margin-right: 5px;
+    background-color: #FFCC33;
+    font-size: 12px;
+    padding: 3px;
+    border: 1px solid #CCCCCC;
+    color: #000000 !important;
+}
+
+table.navegacion a.pagelink {
+    border: 1px solid #666666;
+    margin: 0 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+table.navegacion a.currentpage {
+    background-color: yellow;
+}
+
+/***************************/
+/***************************/
+/** GESTION DE ENTREGAS **/
+/***************************/
+/***************************/
+#DIAnetTableFiltreEntregas {
+    background-color: #CCCCCC;
+    width: 96%;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#DIAnetTableFiltreEntregas th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #CCFFFF;
+    padding: 3px;
+}
+
+#DIAnetTableFiltreEntregas td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFFF;
+    padding: 3px;
+    height: 18px;
+}
+
+#DIAnetTableFiltreEntregas  th a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#DIAnetTableListadoEntregas {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+}
+
+#DIAnetTableListadoEntregas  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableListadoEntregas  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFFF;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableListadoEntregas  td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+/** Clientes**/
+#DIAnetTableFiltreClientes {
+    background-color: #CCCCCC;
+    width: auto;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#DIAnetTableFiltreClientes th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #CCFFFF;
+    padding: 3px;
+}
+
+#DIAnetTableFiltreClientes td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFFF;
+    padding: 3px;
+    height: 18px;
+}
+
+#DIAnetTableListadoClientes {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+}
+
+#DIAnetTableListadoClientes  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableListadoClientes  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFFF;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableListadoClientes  td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+/** detalle  **/
+#DIAnetTableDetalleEntrega {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+#DIAnetTableDetalleEntrega  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableDetalleEntrega  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #EAEAEA;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableDetalleProductosEntrega {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#DIAnetTableDetalleProductosEntrega  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableDetalleProductosEntrega  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: #FFFFFF;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableDetalleProductosEntrega  td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#DIAnetTableDetalleValoresAgregadosEntrega {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#DIAnetTableDetalleValoresAgregadosEntrega  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableDetalleValoresAgregadosEntrega  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: #FFFFFF;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+/** alta/modificacion  **/
+#DIAnetTableAltaEntrega {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+#DIAnetTableAltaEntrega  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableAltaEntrega  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #EAEAEA;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableAltaEntrega  th a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#DIAnetTableAltaProductosEntrega {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+#DIAnetTableAltaProductosEntrega  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableAltaProductosEntrega  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: #FFFFFF;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableAltaProductosEntrega  td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#DIAnetTableAltaProductosEntregaStocks {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#DIAnetTableAltaProductosEntregaStocks  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableAltaProductosEntregaStocks  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: #FFFFFF;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableAltaProductosEntregaStocks  th a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#DIAnetTableAltaProductosEntregaListadoStocks {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#DIAnetTableAltaProductosEntregaListadoStocks  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableAltaProductosEntregaListadoStocks  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: #FFFFFF;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableAltaValoresAgregadosEntrega {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#DIAnetTableAltaValoresAgregadosEntrega  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableAltaValoresAgregadosEntrega  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: #FFFFFF;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableAltaDocumentacionEntrega {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#DIAnetTableAltaDocumentacionEntrega  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableAltaDocumentacionEntrega  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: #FFFFFF;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableAltaDocumentacionEntrega  td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+/***************************/
+/***************************/
+/** F. GESTION DE ENTREGAS **/
+/***************************/
+/***************************/
+
+/***************************/
+/***************************/
+/** GESTION DE STOCK **/
+/***************************/
+/***************************/
+#DIAnetTableFiltreStocks {
+    background-color: #CCCCCC;
+    width: 95%;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#DIAnetTableFiltreStocks th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #CCFFFF;
+    padding: 3px;
+}
+
+#DIAnetTableFiltreStocks td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFFF;
+    padding: 3px;
+    height: 18px;
+}
+
+#DIAnetTableFiltreStocks  th a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#DIAnetTableListadoStocks {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+}
+
+#DIAnetTableListadoStocks  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableListadoStocks  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFFF;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableListadoStocks  td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+/** detalle  **/
+#DIAnetTableDetalleStocksCabecera {
+    background-color: #CCCCCC;
+    width: 90%;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+#DIAnetTableDetalleStocksCabecera  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableDetalleStocksCabecera  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #EAEAEA;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableDetalleStocksContadores {
+    background-color: #CCCCCC;
+    width: 90%;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+#DIAnetTableDetalleStocksContadores  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableDetalleStocksContadores  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: right;
+    background-color: #EAEAEA;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableDetalleStocksContadores  td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+#DIAnetTableDetalleStocksListado {
+    background-color: #CCCCCC;
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+#DIAnetTableDetalleStocksListado  th {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: left;
+    background-color: #FFFFCC;
+    padding: 3px 3px 3px 5px;
+}
+
+#DIAnetTableDetalleStocksListado  td {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    text-align: right;
+    background-color: #EAEAEA;;
+    padding: 3px 3px 3px 5px;
+    height: 18px;
+}
+
+#DIAnetTableDetalleStocksListado  td a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+/***************************/
+/***************************/
+/** F. GESTION DE STOCK **/
+/***************************/
+/***************************/
+
+#MWEBInLineError {
+    display: none;
+    visibility:hidden;
+}
+
+/*Tabla datos*/
+
+.Table
+
+{
+    overflow:scroll;
+    display: table;
+    position: relative; 
+    background-color: #CCCCCC;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    width:1100px;
+}
+
+.Title
+{
+
+    display: table-caption;
+    text-align: center;
+    font-size: larger;
+
+}
+
+.Heading
+{
+
+    display: table-row;
+    text-align: center;
+
+}
+
+.Row
+{
+
+    display: table-row;
+
+}
+
+.Cell
+{
+
+    display: table-cell;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-size: 50px;
+    text-align: left;
+    background-color: #FFFFFF;
+    padding: 3px;
+    height: 10px;
+    width:100px;
+
+}

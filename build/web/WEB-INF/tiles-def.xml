@@ -1,0 +1,7 @@
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration//EN"  "http://jakarta.apache.org/struts/dtds/tiles-config.dtd">
+
+<tiles-definitions>
+	<!-- EJEMPLO DE DEFINICION DE TILES. ACTUALMENTE NO UTILIZADO -->
+	<!-- Para que respecte la DTD se añade una entrada que no se usara -->
+	<definition name="not_used"></definition>
+</tiles-definitions>

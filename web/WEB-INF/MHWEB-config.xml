@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans type="org.apache.struts.action.ActionFormBean">
+		<form-bean name="MWEBLoginForm" type="es.tecsidel.mweb.actionforms.MWEBLoginForm" />
+		<form-bean name="MWEBCambioPasswordForm"
+			type="es.tecsidel.mweb.actionforms.MWEBCambioPasswordForm" />
+		<form-bean name="MWEBFilterOrdenesForm"
+			type="es.tecsidel.mweb.actionforms.entrada.MWEBFilterOrdenesForm" />
+		<form-bean name="MWEBFilterProveedorForm"
+			type="es.tecsidel.mweb.actionforms.entrada.MWEBFilterProveedorForm" />
+		<form-bean name="MWEBAccionOEForm"
+			type="es.tecsidel.mweb.actionforms.entrada.MWEBAccionOEForm" />
+		<form-bean name="MWEBNuevaOEForm"
+			type="es.tecsidel.mweb.actionforms.entrada.MWEBNuevaOEForm" />
+		<form-bean name="MWEBFilterArticulosForm"
+			type="es.tecsidel.mweb.actionforms.entrada.MWEBFilterArticulosForm" />
+		<form-bean name="MWEBFilterEntregaForm"
+			type="es.tecsidel.mweb.actionforms.entregas.MWEBFilterEntregaForm" />
+		<form-bean name="MWEBAccionEntregaForm"
+			type="es.tecsidel.mweb.actionforms.entregas.MWEBAccionEntregaForm" />
+		<form-bean name="MWEBFilterStockForm"
+			type="es.tecsidel.mweb.actionforms.stock.MWEBFilterStockForm" />
+		<form-bean name="MWEBStockDetalleForm"
+			type="es.tecsidel.mweb.actionforms.stock.MWEBStockDetalleForm" />
+		<form-bean name="MWEBFilterClienteForm"
+			type="es.tecsidel.mweb.actionforms.entregas.MWEBFilterClienteForm" />
+		<form-bean name="MWEBNuevaEntregaForm"
+			type="es.tecsidel.mweb.actionforms.entregas.MWEBNuevaEntregaForm" />
+	</form-beans>
+
+	<!-- ========== Global Forward Definitions ============================== -->
+	<global-forwards type="org.apache.struts.action.ActionForward">
+		<!-- Error -->
+		<forward name="fallo" path="/PaginaError.do" />
+		<forward name="sinpermisos" path="/PaginaSinPermisos.do" />
+	</global-forwards>
+
+	<!-- ========== Action Mapping Definitions ============================== -->
+	<action-mappings type="org.apache.struts.action.ActionMapping">
+
+		<!-- Login de usuario -->
+		<action path="/Login" type="es.tecsidel.mweb.actions.MWEBLoginAction"
+			name="MWEBLoginForm" scope="request" validate="true" input="/WEB-INF/jsps/login.jsp">
+			<forward name="exito" path="/PaginaInicio.do" />
+			<forward name="fallo" path="/PaginaLogin.do" />
+		</action>
+		
+		<!-- Cambio contraseña de usuario -->
+		<action path="/ChgPwd" type="es.tecsidel.mweb.actions.MWEBCambioPasswordAction"
+			name="MWEBCambioPasswordForm" scope="request" validate="true" input="/WEB-INF/jsps/chgpwd/chgpwd.jsp">
+			<forward name="exito" path="//PaginaChgPwdOk.do" />
+			<forward name="fallo" path="/PaginaChgPwd.do" />
+		</action>
+
+		<action path="/ConsultaOrdenesEntrada"
+			type="es.tecsidel.mweb.actions.entrada.MWEBConsultaOEAction" name="MWEBFilterOrdenesForm"
+			scope="request" validate="true" input="/WEB-INF/jsps/entrada/consultaOE1.jsp">
+			<forward name="exito" path="/PaginaOrdenesEntrada.do" />
+			<forward name="fallo" path="/PaginaOrdenesEntrada.do" />
+		</action>
+
+		<action path="/PaginaMenuGestionOE"
+			type="es.tecsidel.mweb.actions.MWEBBorradoSessionAction">
+			<forward name="exito" path="/PaginaOrdenesEntrada.do" />
+			<forward name="fallo" path="/PaginaOrdenesEntrada.do" />
+		</action>
+
+		<action path="/PaginaProveedoresOE"
+			type="es.tecsidel.mweb.actions.entrada.MWEBGuardarFormOEAction" name="MWEBFilterOrdenesForm"
+			scope="request" validate="false" input="/WEB-INF/jsps/entrada/consultaOE1.jsp">
+			<forward name="exito" path="/PaginaProveedores.do" />
+			<forward name="fallo" path="/PaginaProveedores.do" />
+		</action>
+
+
+		<action path="/PaginaProveedoresAlta"
+			type="es.tecsidel.mweb.actions.entrada.MWEBActualizarNuevaOEAction"
+			name="MWEBNuevaOEForm" scope="request" input="/WEB-INF/jsps/entrada/altaOE1.jsp">
+			<forward name="fallo" path="/PaginaProveedores.do" />
+			<forward name="exito" path="/PaginaProveedores.do" />
+		</action>
+
+		<action path="/ImprimeOrdenesEntradaAction"
+			type="es.tecsidel.mweb.actions.entrada.MWEBImprimeOrdenesEntradaAction"
+			parameter="language">
+			<forward name="fallo" path="/PaginaOrdenesEntrada.do" />
+		</action>
+
+		<action path="/ConsultaProveedores"
+			type="es.tecsidel.mweb.actions.entrada.MWEBProveedoresAction" name="MWEBFilterProveedorForm"
+			scope="request" input="/WEB-INF/jsps/entrada/consultaOE2.jsp">
+			<forward name="exito" path="/PaginaProveedores.do" />
+			<forward name="fallo" path="/PaginaProveedores.do" />
+		</action>
+
+		<action path="/ConsultaArticulos"
+			type="es.tecsidel.mweb.actions.entrada.MWEBArticulosAction" name="MWEBFilterArticulosForm"
+			scope="request" input="/WEB-INF/jsps/comun/consultaArticulos.jsp">
+			<forward name="exito" path="/PaginaBuscarArticulos.do" />
+			<forward name="fallo" path="/PaginaBuscarArticulos.do" />
+			<forward name="busquedaAutomaticoExito" path="/ActualizarNuevaOE.do" />
+		</action>
+
+		<action path="/ConsultaArticulosAutomatica"
+			type="es.tecsidel.mweb.actions.entrada.MWEBArticulosAction" scope="request">
+			<forward name="exito" path="/PaginaBuscarArticulos.do" />
+			<forward name="fallo" path="/PaginaBuscarArticulos.do" />
+			<forward name="busquedaAutomaticoExito" path="/ActualizarNuevaOE.do" />
+		</action>
+
+		<action path="/ActualizarNuevaOE"
+			type="es.tecsidel.mweb.actions.entrada.MWEBActualizarNuevaOEAction"
+			name="MWEBNuevaOEForm" scope="request" input="/WEB-INF/jsps/entrada/altaOE1.jsp">
+			<forward name="fallo" path="/PaginaOrdenesEntrada.do" />
+			<forward name="exito" path="/PaginaEditaOrdenesEntrada.do" />
+			<forward name="guardar" path="/GuardarOE.do" />
+			<forward name="busquedaAutomatica" path="/ConsultaArticulosAutomatica.do" />
+		</action>
+
+
+		<action path="/PaginaArticulos"
+			type="es.tecsidel.mweb.actions.entrada.MWEBActualizarNuevaOEAction"
+			name="MWEBNuevaOEForm" scope="request" input="/WEB-INF/jsps/entrada/altaOE1.jsp">
+			<forward name="fallo" path="/PaginaBuscarArticulos.do" />
+			<forward name="exito" path="/PaginaBuscarArticulos.do" />
+		</action>
+
+		<action path="/AnularOE"
+			type="es.tecsidel.mweb.actions.entrada.MWEBAnularOEAction" name="MWEBAccionOEForm"
+			scope="request" validate="true" input="/WEB-INF/jsps/entrada/consultaOE1.jsp">
+			<forward name="exito" path="/PaginaOrdenesEntrada.do" />
+			<forward name="fallo" path="/PaginaOrdenesEntrada.do" />
+		</action>
+
+		<action path="/EliminarEntrega"
+			type="es.tecsidel.mweb.actions.entregas.MWEBEliminarEntregaAction"
+			name="MWEBAccionEntregaForm" scope="request" validate="true"
+			input="/WEB-INF/jsps/entrada/consultaE1.jsp">
+			<forward name="exito" path="/PaginaEntregas.do" />
+			<forward name="fallo" path="/PaginaEntregas.do" />
+		</action>
+
+		<action path="/ModificarOE"
+			type="es.tecsidel.mweb.actions.entrada.MWEBModificarOEAction" name="MWEBAccionOEForm"
+			scope="request" validate="true" input="/WEB-INF/jsps/entrada/consultaOE1.jsp">
+			<forward name="exito" path="/PaginaOrdenesEntrada.do" />
+			<forward name="fallo" path="/PaginaOrdenesEntrada.do" />
+		</action>
+
+		<action path="/DetalleOE"
+			type="es.tecsidel.mweb.actions.entrada.MWEBDetalleOEAction" name="MWEBAccionOEForm"
+			scope="request" input="/WEB-INF/jsps/entrada/consultaOE1.jsp">
+			<forward name="exito" path="/PaginaDetalleOrdenesEntrada.do" />
+			<forward name="fallo" path="/PaginaOrdenesEntrada.do" />
+		</action>
+
+		<action path="/EditarOE" forward="/WEB-INF/jsps/entrada/altaOE1.jsp"
+			type="es.tecsidel.mweb.actions.entrada.MWEBEditarOEAction" scope="request"
+			name="MWEBAccionOEForm" input="/WEB-INF/jsps/entrada/consultaOE1.jsp">
+			<forward name="exito" path="/ActualizarNuevaOE.do" />
+			<forward name="fallo" path="/PaginaEditaOrdenesEntrada.do" />
+		</action>
+
+
+		<action path="/ExportarDetallePDFOrdenesEntradaAction"
+			type="es.tecsidel.mweb.actions.entrada.MWEBGenerarDetalleOrdenEntradaPDF"
+			parameter="language">
+			<forward name="fallo" path="/PaginaDetalleOrdenesEntrada.do" />
+		</action>
+
+		<action path="/ExportarDetalleExcelOrdenesEntradaAction"
+			type="es.tecsidel.mweb.actions.entrada.MWEBGenerarDetalleOrdenEntradaExcel"
+			parameter="language">
+			<forward name="fallo" path="/PaginaDetalleOrdenesEntrada.do" />
+		</action>
+
+		<action path="/CerrarSesion" type="cl.webmh.framework.MhActionServlet">
+			<forward name="exito" path="/PaginaLogin.do" />
+		</action>
+
+		<action path="/cambioidioma" type="es.tecsidel.mweb.actions.MWEBCambiarIdiomaAction"
+			parameter="language">
+			<forward name="exito" path="/PaginaLogin.do" />
+		</action>
+
+		<action path="/NuevaOE" forward="/WEB-INF/jsps/entrada/altaOE1.jsp"
+			type="es.tecsidel.mweb.actions.entrada.MWEBNuevaOEAction" scope="request"
+			input="/WEB-INF/jsps/entrada/consultaOE1.jsp">
+			<forward name="exito" path="/ActualizarNuevaOE.do" />
+			<forward name="fallo" path="/PaginaOrdenesEntrada.do" />
+		</action>
+
+
+		<action path="/GuardarOE"
+			type="es.tecsidel.mweb.actions.entrada.MWEBGuardarOEAction" name="MWEBNuevaOEForm"
+			scope="request" input="/WEB-INF/jsps/entrada/altaOE1.jsp">
+			<forward name="fallo" path="/PaginaEditaOrdenesEntrada.do" />
+			<forward name="exito" path="/PaginaOrdenesEntrada.do" />
+		</action>
+
+
+		<!-- ========== GESTION DE ENTREGAS ============================== -->
+
+		<action path="/PaginaMenuGestionEntregas"
+			type="es.tecsidel.mweb.actions.entregas.MWEBNuevaConsultaEntregaAction">
+			<forward name="exito" path="/PaginaEntregas.do" />
+			<forward name="fallo" path="/PaginaEntregas.do" />
+		</action>
+
+		<action path="/ConsultaEntregas"
+			type="es.tecsidel.mweb.actions.entregas.MWEBConsultaEntregaAction"
+			name="MWEBFilterEntregaForm" scope="request" validate="true"
+			input="/WEB-INF/jsps/entrada/consultaE1.jsp">
+			<forward name="exito" path="/PaginaEntregas.do" />
+			<forward name="fallo" path="/PaginaEntregas.do" />
+		</action>
+
+
+		<action path="/LimpiarBusquedaConsultaEntregas"
+			type="es.tecsidel.mweb.actions.entregas.MWEBControlFormEntregaAction"
+			name="MWEBFilterEntregaForm" scope="request" validate="false"
+			input="/WEB-INF/jsps/entrada/consultaE1.jsp">
+			<forward name="exito" path="/PaginaEntregas.do" />
+			<forward name="fallo" path="/PaginaEntregas.do" />
+		</action>
+
+		<action path="/PaginaClientesEntregas"
+			type="es.tecsidel.mweb.actions.entregas.MWEBControlFormEntregaAction"
+			name="MWEBFilterEntregaForm" scope="request" validate="false"
+			input="/WEB-INF/jsps/entrada/consultaE1.jsp">
+			<forward name="exito" path="/PaginaBuscarClientes.do" />
+			<forward name="fallo" path="/PaginaBuscarClientes.do" />
+		</action>
+
+		<action path="/ConsultaClientes"
+			type="es.tecsidel.mweb.actions.entregas.MWEBConsultaClientesAction"
+			name="MWEBFilterClienteForm" scope="request" input="/WEB-INF/jsps/entregas/consultaClientes.jsp">
+			<forward name="exito" path="/PaginaBuscarClientes.do" />
+			<forward name="fallo" path="/PaginaBuscarClientes.do" />
+		</action>
+
+		<action path="/PaginaArticulosEntregas"
+			type="es.tecsidel.mweb.actions.entregas.MWEBControlFormEntregaAction"
+			name="MWEBFilterEntregaForm" scope="request" input="/WEB-INF/jsps/entrada/consultaE1.jsp">
+			<forward name="fallo" path="/PaginaBuscarArticulos.do" />
+			<forward name="exito" path="/PaginaBuscarArticulos.do" />
+		</action>
+
+		<action path="/ControlImprimeEntregas"
+			type="es.tecsidel.mweb.actions.entregas.MWEBControlFormEntregaAction"
+			name="MWEBFilterEntregaForm" scope="request" input="/WEB-INF/jsps/entrada/consultaE1.jsp">
+			<forward name="fallo" path="/PaginaEntregas.do" />
+			<forward name="exito" path="/ImprimeEntregas.do" />
+		</action>
+
+		<action path="/ImprimeEntregas"
+			type="es.tecsidel.mweb.actions.entregas.MWEBImprimeEntregasAction"
+			parameter="language">
+			<forward name="fallo" path="/PaginaEntregas.do" />
+		</action>
+
+		<action path="/ExportarDetallePDFEntregasAction"
+			type="es.tecsidel.mweb.actions.entregas.MWEBGenerarDetalleEntregaPDFAction"
+			parameter="language">
+			<forward name="fallo" path="/DetalleEntrega.do" />
+		</action>
+
+		<action path="/ExportarDetalleExcelEntregasAction"
+			type="es.tecsidel.mweb.actions.entregas.MWEBGenerarDetalleEntregaExcelAction"
+			parameter="language">
+			<forward name="fallo" path="/DetalleEntrega.do" />
+		</action>
+
+		<action path="/DetalleEntrega"
+			type="es.tecsidel.mweb.actions.entregas.MWEBDetalleEntregaAction"
+			name="MWEBAccionEntregaForm" scope="request" input="/WEB-INF/jsps/entrada/consultaE1.jsp">
+			<forward name="exito" path="/PaginaDetalleEntregas.do" />
+			<forward name="fallo" path="/PaginaEntregas.do" />
+		</action>
+
+		<action path="/NuevaEntrega"
+			type="es.tecsidel.mweb.actions.entregas.MWEBNuevaEntregaAction" name="MWEBAccionEntregaForm"
+			scope="request" input="/WEB-INF/jsps/entrada/consultaE1.jsp">
+			<forward name="exito" path="/ActualizarNuevaEntrega.do" />
+			<forward name="fallo" path="/PaginaEntregas.do" />
+		</action>
+
+		<action path="/EditarEntrega"
+			type="es.tecsidel.mweb.actions.entregas.MWEBEditarEntregaAction"
+			scope="request" name="MWEBAccionEntregaForm" input="/WEB-INF/jsps/entrada/consultaE1.jsp">
+			<forward name="exito" path="/ActualizarNuevaEntrega.do" />
+			<forward name="fallo" path="/PaginaEntregas.do" />
+		</action>
+
+		<action path="/ActualizarNuevaEntrega"
+			type="es.tecsidel.mweb.actions.entregas.MWEBActualizarNuevaEntregaAction"
+			name="MWEBNuevaEntregaForm" scope="request" input="WEB-INF/entregas/altaE.jsp">
+			<forward name="fallo" path="/PaginaEntregas.do" />
+			<forward name="exito" path="/PaginaAltaEntregas.do" />
+			<forward name="guardar" path="/GuardarEntrega.do" />
+			<forward name="busquedaAutomatica" path="/ConsultaArticulosAutomaticaEntrega.do" />
+		</action>
+
+		<action path="/ConsultaArticulosAutomaticaEntrega"
+			type="es.tecsidel.mweb.actions.entrada.MWEBArticulosAction" scope="request">
+			<forward name="exito" path="/PaginaBuscarArticulos.do" />
+			<forward name="fallo" path="/PaginaBuscarArticulos.do" />
+			<forward name="busquedaAutomaticoExito" path="/ActualizarNuevaEntrega.do" />
+		</action>
+
+		<action path="/GuardarEntrega"
+			type="es.tecsidel.mweb.actions.entregas.MWEBGuardarEntregaAction"
+			name="MWEBNuevaEntregaForm" scope="request" input="WEB-INF/entregas/altaE.jsp">
+			<forward name="fallo" path="/PaginaAltaEntregas.do" />
+			<forward name="exito" path="/PaginaEntregas.do" />
+		</action>
+
+		<action path="/PaginaClientesAlta"
+			type="es.tecsidel.mweb.actions.entregas.MWEBActualizarNuevaEntregaAction"
+			name="MWEBNuevaEntregaForm" scope="request" input="WEB-INF/entregas/altaE.jsp">
+			<forward name="fallo" path="/PaginaAltaEntregas.do" />
+			<forward name="exito" path="/PaginaBuscarClientes.do" />
+		</action>
+
+		<action path="/PaginaArticulosAlta"
+			type="es.tecsidel.mweb.actions.entregas.MWEBActualizarNuevaEntregaAction"
+			name="MWEBNuevaEntregaForm" scope="request" input="WEB-INF/entregas/altaE.jsp">
+			<forward name="fallo" path="/PaginaAltaEntregas.do" />
+			<forward name="exito" path="/PaginaBuscarArticulos.do" />
+		</action>
+
+
+		<!-- ========== FIN GESTION DE ENTREGAS ============================== -->
+
+
+		<!-- ========== GESTION DE STOCK ============================== -->
+
+		<action path="/PaginaMenuGestionStocks"
+			type="es.tecsidel.mweb.actions.MWEBBorradoSessionAction">
+			<forward name="exito" path="/PaginaInicializaGestionStocks.do" />
+			<forward name="fallo" path="/PaginaInicializaGestionStocks.do" />
+		</action>
+
+
+		<!-- Pagina para la inicializacion de datos cache actions -->
+		<action path="/PaginaInicializaGestionStocks"
+			type="es.tecsidel.mweb.actions.stock.MWEBInicializarBusquedaStocksAction">
+			<forward name="exito" path="/PaginaStock.do" />
+			<forward name="fallo" path="/PaginaStock.do" />
+		</action>
+
+
+		<action path="/GestorBusquedaStocks"
+			type="es.tecsidel.mweb.actions.stock.MWEBControlBusquedaStocksAction"
+			name="MWEBFilterStockForm" scope="request" validate="true"
+			input="/WEB-INF/jsps/stock/consultaS1.jsp">
+			<forward name="busquedaStocks" path="/ConsultaStocks.do" />
+			<forward name="resetear" path="/LimpiarBusquedaConsultaStocks.do" />
+			<forward name="busquedaArticulos" path="/PaginaBuscarArticulos.do" />
+			<forward name="imprimir" path="/ImprimeStocksAction.do" />
+			<forward name="exportar" path="/ExportarDetalleExcelStockAction.do" />
+			<forward name="detalle" path="/InicializaDetalleStock.do" />
+			<forward name="exito" path="/PaginaStock.do" />
+			<forward name="fallo" path="/PaginaStock.do" />
+		</action>
+
+
+		<action path="/ConsultaStocks"
+			type="es.tecsidel.mweb.actions.stock.MWEBConsultaStockAction" name="MWEBFilterStockForm"
+			scope="request" validate="true" input="/WEB-INF/jsps/stock/consultaS1.jsp">
+			<forward name="exito" path="/PaginaStock.do" />
+			<forward name="fallo" path="/PaginaStock.do" />
+		</action>
+
+		<action path="/LimpiarBusquedaConsultaStocks"
+			type="es.tecsidel.mweb.actions.stock.MWEBLimpiarStockAction" input="/WEB-INF/jsps/stock/consultaS1.jsp"
+			name="MWEBFilterStockForm" scope="request">
+			<forward name="exito" path="/PaginaStock.do" />
+			<forward name="fallo" path="/PaginaStock.do" />
+		</action>
+
+
+		<action path="/PaginaArticulosStocks"
+			type="es.tecsidel.mweb.actions.stock.MWEBGuardarFormStockAction">
+			<forward name="fallo" path="/GestorBusquedaStocks.do" />
+			<forward name="exito" path="/GestorBusquedaStocks.do" />
+		</action>
+
+
+		<action path="/ImprimeStocksAction"
+			type="es.tecsidel.mweb.actions.stock.MWEBImprimeStocksAction"
+			parameter="language">
+			<forward name="fallo" path="/PaginaMenuGestionStocks.do" />
+		</action>
+
+
+		<action path="/ExportarDetalleExcelStockAction"
+			type="es.tecsidel.mweb.actions.stock.MWEBGenerarDetalleStockExcel"
+			parameter="language">
+			<forward name="fallo" path="/PaginaMenuGestionStocks.do" />
+		</action>
+
+		<action path="/InicializaDetalleStock"
+			type="es.tecsidel.mweb.actions.stock.MWEBInicializarDetallesStocksAction">
+			<forward name="exito" path="/GestorDetalleStock.do" />
+			<forward name="fallo" path="/GestorBusquedaStocks.do" />
+		</action>
+
+		<action path="/GestorDetalleStock"
+			type="es.tecsidel.mweb.actions.stock.MWEBControlDetalleStocksAction"
+			input="/WEB-INF/jsps/stock/detalleStock.jsp" name="MWEBStockDetalleForm" scope="request">
+			<forward name="exito" path="/PaginaDetallesStock.do" />
+			<forward name="fallo" path="/PaginaDetallesStock.do" />
+			<forward name="volver" path="/GestorBusquedaStocks.do" />
+		</action>
+
+		<action path="/PaginaDetallesStock" forward="/WEB-INF/jsps/stock/detalleStock.jsp" />
+
+		<!-- ========== FIN GESTION DE STOCK ============================== -->
+
+		<action path="/PaginaInicio" forward="/WEB-INF/jsps/portada.jsp" />
+		<action path="/PaginaProveedores" forward="/WEB-INF/jsps/entrada/consultaOE2.jsp" />
+		<action path="/PaginaOrdenesEntrada" forward="/WEB-INF/jsps/entrada/consultaOE1.jsp" />
+		<action path="/PaginaNuevaOrdenesEntrada" forward="/WEB-INF/jsps/entrada/altaOE1.jsp" />
+		<action path="/PaginaEditaOrdenesEntrada" forward="/WEB-INF/jsps/entrada/altaOE1.jsp" />
+		<action path="/PaginaDetalleOrdenesEntrada" forward="/WEB-INF/jsps/entrada/consultaOE3.jsp" />
+
+		<action path="/PaginaBuscarArticulos" forward="/WEB-INF/jsps/comun/consultaArticulos.jsp" />
+		<action path="/PaginaEntregas" forward="/WEB-INF/jsps/entregas/consultaE1.jsp" />
+		<action path="/PaginaStock" forward="/WEB-INF/jsps/stock/consultaS1.jsp" />
+
+		<action path="/PaginaDetalleEntregas" forward="/WEB-INF/jsps/entregas/detalleE.jsp" />
+		<action path="/PaginaAltaEntregas" forward="/WEB-INF/jsps/entregas/altaE.jsp" />
+		<action path="/PaginaEditaEntregas" forward="/WEB-INF/jsps/entregas/altaE.jsp" />
+
+		<action path="/PaginaBuscarClientes" forward="/WEB-INF/jsps/entregas/consultaClientes.jsp" />
+
+		<action path="/PaginaAcercaDe" forward="/WEB-INF/jsps/acercade/acercade.jsp" />
+
+		<action path="/PaginaChgPwd" forward="/WEB-INF/jsps/chgpwd/chgpwd.jsp" />
+		<action path="/PaginaChgPwdOk" forward="/WEB-INF/jsps/chgpwd/chgpwdOk.jsp" />
+		
+		<action path="/PaginaLogin" forward="/WEB-INF/jsp/login.jsp" />
+		<action path="/PaginaError" forward="/WEB-INF/jsps/error.jsp" />
+		<action path="/PaginaSinPermisos" forward="/WEB-INF/jsps/sinpermisos.jsp" />
+                <action path="/Menu" forward="/WEB-INF/jsp/menu.jsp" />
+                <action path="/Menu2" forward="/WEB-INF/jsp/menu2.jsp" />
+		
+	</action-mappings>
+
+	<message-resources parameter="es.tecsidel.mweb.ApplicationResources"
+		null="false" />
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+
+</struts-config>
