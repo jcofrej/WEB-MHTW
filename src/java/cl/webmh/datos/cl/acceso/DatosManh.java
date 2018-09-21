@@ -4,15 +4,17 @@ package cl.webmh.datos.cl.acceso;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 
 public class DatosManh {
     
-    private String userMh="manh";
-    private String passMh="manh";
-    private String hostMh="10.10.10.206";//test
-    private String portMh="1433";
-    private String dbMh="ILS";
+    ResourceBundle rb = ResourceBundle.getBundle("cl.webmh.framework.ApplicationResources");
+    private String userMh=rb.getString("USER_AGENT");
+    private String passMh=rb.getString("PASS_AGENT");
+    private String hostMh=rb.getString("IP_AGENT");
+    //private String portMh="1433";
+    private String dbMh=rb.getString("NAME_AGENT");
     private String classNameMh="com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private String urlMh="jdbc:sqlserver://"+hostMh+";databaseName="+dbMh;        
     private Connection conMh;

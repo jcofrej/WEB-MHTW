@@ -4,14 +4,16 @@ package cl.webmh.datos.cl.acceso;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 
 public class DatosWeb {
-    private String userWeb="sa";
-    private String passWeb="twl#123.";
-    private String hostWeb="10.10.15.71";
+    ResourceBundle rb = ResourceBundle.getBundle("cl.webmh.framework.ApplicationResources");
+    private String userWeb=rb.getString("USER_WEB");
+    private String passWeb=rb.getString("PASS_WEB");
+    private String hostWeb=rb.getString("IP_WEB");
     //private String portWeb="62735";
-    private String dbWeb="WEB";
+    private String dbWeb=rb.getString("NAME_WEB");
     private String classNameWeb="com.microsoft.sqlserver.jdbc.SQLServerDriver";
     private String urlWeb="jdbc:sqlserver://"+hostWeb+";databaseName="+dbWeb;        
     private Connection conWeb;
