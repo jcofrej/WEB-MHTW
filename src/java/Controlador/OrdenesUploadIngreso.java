@@ -87,6 +87,8 @@ public class OrdenesUploadIngreso extends HttpServlet {
         LinkedList<Articulos> vrConsulta = new LinkedList<Articulos>();
         LinkedList<Proveedores> vrConsultaProv = new LinkedList<Proveedores>();
         String vrIdCliente = request.getSession().getAttribute("idcliente2").toString();
+        String vrCheckCampo="";
+        String Cells="";
         
         try{
             
@@ -110,8 +112,149 @@ public class OrdenesUploadIngreso extends HttpServlet {
                  HSSFWorkbook workbook = new HSSFWorkbook(item.getInputStream());
 
                  HSSFSheet sh = (HSSFSheet) workbook.getSheetAt(0);
-                 Iterator<Row> rowIterator = sh.rowIterator();
+                 int rows = sh.getPhysicalNumberOfRows();
+                 int cells=0;
+                
+                 for (int r = 0; r < rows; r++)
+                 {
+                        // System.out.println("row " + r + '\t' );
+                        HSSFRow row = sh.getRow(r);
+ 
+                        if (r==0)
+                        {
+                            cells = row.getPhysicalNumberOfCells();
+                        }
+                        else{
+                            
+                            ProductosExcel vrProductos = new ProductosExcel();
+                            int colcount=0;
+                            String vrError="";
+                            for (int c = 0; c < cells; c++)
+                            {
+                                    HSSFCell cell = row.getCell((short)c);
+                                    String vrCampoTexto = "";
+                                    String vrFecha=null;
+                                    vrCheckCampo="";
+                                   
+                                    if (cell!=null)
+                                    {
+                                        switch (cell.getCellType()) {
+                                        case 0:
+                                                if (DateUtil.isCellDateFormatted(cell)) {
+                                                        String vrFecActual;
+                                                        SimpleDateFormat parseador = new SimpleDateFormat("dd/MM/yyyy");
+                                                        // el que formatea
+                                                        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                                                        vrFecha= formatter.format(cell.getDateCellValue());
+                                                        //Date date = cell.getDateCellValue();
+                                                        //vrFecha=parseador.parse(vrFecActual);
+                                                } else {
+                                                    vrCampoTexto = String.valueOf(cell.getNumericCellValue());
+                                                    vrCampoTexto = vrCampoTexto.replace(".0","");
+                                                }
+                                            break;
+                                        case 1:
+                                            vrCampoTexto += cell.getStringCellValue();
+                                            break;
+                                        case 2:         
+                                            break;       
+                                        }
+                                    }else
+                                    {
+                                         vrCampoTexto="";
+                                         vrFecha="";
+                                    }
+                                    
+                                    switch (colcount) {
+                                    case 0:                                   
+                                            vrProductos.setCodProv(vrCampoTexto);
+                                        break;
+
+                                    case 1:
+                                            vrProductos.setCodSeg(vrCampoTexto);
+                                    break;
+
+                                   case 2:
+                                            vrProductos.setFechaIngreso(vrFecha);
+                                        break;         
+
+                                   case 3:
+                                            vrProductos.setCodArt(vrCampoTexto);
+                                        break;  
+
+                                   case 4:
+                                           vrProductos.setDescripcion(vrCampoTexto);
+                                        break;   
+
+                                   case 5:
+                                           vrProductos.setCantidad(Integer.parseInt(vrCampoTexto));
+                                           vrCheckCampo="Cantidad";
+                                        break;
+
+                                   case 6:
+                                            vrProductos.setLote(vrCampoTexto);
+                                            vrCheckCampo="Lote";
+                                        break;
+                                   case 7:
+                                            vrProductos.setFechaVencimiento(vrFecha);
+                                            vrCheckCampo="FecVen";
+                                        break;
+                                   case 8:
+                                            vrProductos.setUbicacion(vrCampoTexto);
+                                            vrCheckCampo="Ubicacion";
+                                        break;
+                                    }
+                             colcount++;
+                            } //end for c
+                            
+                               String vrCodArt=vrProductos.getCodArt();
+                               vrProductos.setCodCli(vrIdCliente);
+                               /*
+                              if (matchesPolicy(vrProductos.getCodProv().toString())==true)
+                              {
+                                vrError="El código de proveedor no es válido";
+                              }
+
+                              if (matchesPolicy(vrProductos.getCodSeg().toString())==true)
+                              {
+                                vrError="El código de seguimiento no es válido";
+                              }
+                              */
+                              vrConsulta=vrGetConsulta.getArticulos(vrIdCliente, vrCodArt, "", "");
+                              
+                              String vrProveedor=vrProductos.getCodProv();
+                              vrConsultaProv=vrGetConsulta.getProveedor(vrIdCliente, vrProveedor, "");
+                              if (vrConsultaProv!=null)
+                              {
+                                if (vrConsultaProv.size()==0)
+                                {
+                                    vrError=",No Existe el Proveedor";
+                                }
+                              }
+                              
+                              if (vrConsulta!=null)
+                              {
+                                if (vrConsulta.size()==0){ 
+                                    vrProductos.setObservacion("Articulo no Existe");
+                                }
+                                else{
+                                  vrProductos.setObservacion("OK"+vrError.toString());
+                                }
+                              }
+                              else
+                              {
+                                  vrProductos.setObservacion("Articulo no Existe");
+                              }
+
+                             ListaProductos.add(vrProductos);
+                        }
+                } //end for
                  
+                 
+                 
+                 /*
+                 Iterator<Row> rowIterator = sh.rowIterator();
+                 //Cells = rowIterator.
                  int rowcount=0;
                  while(rowIterator.hasNext()) {   
                     HSSFRow row = (HSSFRow) rowIterator.next();  
@@ -123,11 +266,10 @@ public class OrdenesUploadIngreso extends HttpServlet {
                         Iterator<Cell> cellIterator = row.cellIterator();
                     
                          int colcount=0;
-                         String vrError="";
+                         
                          while(cellIterator.hasNext()) {
                              HSSFCell cell = (HSSFCell) cellIterator.next();
-                             String vrCampoTexto = "";
-                             String vrFecha=null;
+
 
                             switch (cell.getCellType()) {
                             case 0:
@@ -148,7 +290,10 @@ public class OrdenesUploadIngreso extends HttpServlet {
                                 vrCampoTexto += cell.getStringCellValue();
                                 break;
                             case 2:         
-                                break;                          
+                                break;       
+                            case Cell.CELL_TYPE_BLANK: 
+                                vrCampoTexto="";
+                                break;                                 
                             }
 
                             switch (colcount) {
@@ -174,10 +319,20 @@ public class OrdenesUploadIngreso extends HttpServlet {
                                
                            case 5:
                                    vrProductos.setCantidad(Integer.parseInt(vrCampoTexto));
+                                   vrCheckCampo="Cantidad";
                                 break;
                                
                            case 6:
                                     vrProductos.setLote(vrCampoTexto);
+                                    vrCheckCampo="Lote";
+                                break;
+                           case 7:
+                                    vrProductos.setFechaVencimiento(vrFecha);
+                                    vrCheckCampo="FecVen";
+                                break;
+                           case 8:
+                                    vrProductos.setUbicacion(vrCampoTexto);
+                                    vrCheckCampo="Ubicacion";
                                 break;
                             }
                             
@@ -187,6 +342,8 @@ public class OrdenesUploadIngreso extends HttpServlet {
                          if (colcount==6){ 
                              
                             vrProductos.setLote("");
+                            vrProductos.setFechaVencimiento("");
+                            vrProductos.setUbicacion("");
                             vrProductos.setCodCli(vrIdCliente);
                             
                             if (matchesPolicy(vrProductos.getCodProv().toString())==true)
@@ -229,6 +386,8 @@ public class OrdenesUploadIngreso extends HttpServlet {
                           if (colcount==7){ 
                               
                               vrProductos.setCodCli(vrIdCliente);
+                              vrProductos.setFechaVencimiento("");
+                              vrProductos.setUbicacion("");
                               String vrCodArt=vrProductos.getCodArt();
 
                               if (validarcacater(vrProductos.getCodProv().toString())==true)
@@ -277,8 +436,10 @@ public class OrdenesUploadIngreso extends HttpServlet {
                  workbook=null;
                  sh=null;
                  rowIterator=null;
+                   */
 
             }
+               
         
         return ListaProductos;
         
@@ -304,8 +465,13 @@ public class OrdenesUploadIngreso extends HttpServlet {
     
     private boolean matchesPolicy(String pwd) {
         boolean vrEstado=false;
-        if (pwd.indexOf("/[%@$&^#*+{}'']/")>0)
-            { vrEstado=true; }
+        int vrLargo=pwd.length();
+        for (int x=0;x<=vrLargo-1;x++)
+        {
+            String vrCarac=pwd.substring(x, 1).toString();
+            if (vrCarac.indexOf("/[%@$&^#*+{}'']/")>0)
+                { vrEstado=true; break;}
+        }
         
         return vrEstado;
     }

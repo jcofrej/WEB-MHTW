@@ -9,8 +9,10 @@ public class ArticulosOe {
     private String usuario;
     private String cliente;
     private String lote;
+    private String fechavencimiento;
+    private String ubicacion;
 
-    public ArticulosOe(String articuloPropietario, String articuloMh, String descripcion, String cantidad, String usuario, String cliente, String lote) {
+    public ArticulosOe(String articuloPropietario, String articuloMh, String descripcion, String cantidad, String usuario, String cliente, String lote,String fechavencimiento,String ubicacion) {
         
         this.articuloPropietario = articuloPropietario;
         this.articuloMh = articuloMh;
@@ -19,6 +21,8 @@ public class ArticulosOe {
         this.usuario = usuario;
         this.cliente = cliente;
         this.lote = lote;
+        this.fechavencimiento=fechavencimiento;
+        this.ubicacion=ubicacion;
     }
 
     public String getLote() {
@@ -77,4 +81,19 @@ public class ArticulosOe {
         this.cliente = cliente;
     }
     
+    public String getFechavencimiento() {
+        return fechavencimiento;
+    }
+
+    public void setFechavencimiento(String fechavencimiento) {
+        this.fechavencimiento = fechavencimiento;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
 }

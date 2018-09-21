@@ -93,7 +93,7 @@ public class ProcesarTablaPedido extends HttpServlet {
                  String vrLote=ListaProductos.get(i).getLote();
                  String vrIdProv=ListaProductos.get(i).getRutCliente();
                  
-                 ArticulosOe vrArticulos= new ArticulosOe(vrCodArticulo, vrNumPed, vrDescrip, vrCantidad, vrIdProv, vrCliente,vrLote);
+                 ArticulosOe vrArticulos= new ArticulosOe(vrCodArticulo, vrNumPed, vrDescrip, vrCantidad, vrIdProv, vrCliente,vrLote,"","");
                  datosOe.add(vrArticulos);               
              }            
          }

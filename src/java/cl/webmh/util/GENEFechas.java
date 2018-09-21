@@ -255,4 +255,19 @@ public class GENEFechas
 
     return calendario.getTime();
   }
+  
+  public static String FechaSinSeparacion(String fecha)
+  {
+      String vrFechFinal="";
+      
+      if (fecha.indexOf("-")>0){
+          vrFechFinal = fecha.replace("-", "").toString();
+      }
+      
+      if (fecha.indexOf("/")>0){
+          vrFechFinal = fecha.replace("/", "").toString();
+      }
+
+      return vrFechFinal;
+  }
 }

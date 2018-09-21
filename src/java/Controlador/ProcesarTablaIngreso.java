@@ -52,23 +52,25 @@ public class ProcesarTablaIngreso extends HttpServlet {
              if (vrEstado==true)
             {
                 request.getSession().setAttribute("datosOe", ListaFinal);
-                String vrCodSeg="";
-                String vrCodProv="";
-                String vrObserva="";
-                String vrCodSeg2="";
-                String vrCodProv2="";
-                for (int x=0;x<=ListaProductos.size();x++)
-                {
-                    vrCodSeg=ListaProductos.get(x).getCodSeg();
-                    vrCodProv=ListaProductos.get(x).getCodProv();
-                    vrObserva=ListaProductos.get(x).getObservacion();
-                    if (vrCodSeg!=vrCodSeg2 && vrCodProv!=vrCodProv2 && vrObserva.equals("OK"))
-                    {
-                        vrCodSeg2=vrCodSeg;
-                        vrCodProv2=vrCodProv;
-                        CrearArchivoRCP(request,response,vrCodSeg,"");
-                    }
-                }
+                //String vrCodSeg="";
+                //String vrCodProv="";
+                //String vrObserva="";
+                //String vrCodSeg2="";
+               // String vrCodProv2="";
+                //for (int x=0;x<=ListaProductos.size();x++)
+               // {
+                 //   vrCodSeg=ListaProductos.get(x).getCodSeg();
+                 //   vrCodProv=ListaProductos.get(x).getCodProv();
+                 //   vrObserva=ListaProductos.get(x).getObservacion();
+                 //   if (vrCodSeg!=vrCodSeg2 && vrCodProv!=vrCodProv2 && vrObserva.equals("OK"))
+                 //   {
+                 //       vrCodSeg2=vrCodSeg;
+                 //       vrCodProv2=vrCodProv;
+                        
+                //    }
+                //}
+                
+                CrearArchivoRCP(request,response,"");
             }
     }
     
@@ -82,15 +84,19 @@ public class ProcesarTablaIngreso extends HttpServlet {
              String vrObserva=ListaProductos.get(i).getObservacion();
              if (vrObserva.equals("OK"))
              {
+                 String vrNumSeg=ListaProductos.get(i).getCodSeg();
                  String vrCodArticulo=ListaProductos.get(i).getCodArt();
                  String vrDescrip=ListaProductos.get(i).getDescripcion();
                  String vrCantidad=Integer.toString(ListaProductos.get(i).getCantidad());
                  String vrCliente=ListaProductos.get(i).getCodCli();
                  String vrLote=ListaProductos.get(i).getLote();
+                 String vrFechaVencimiento=ListaProductos.get(i).getFechaVencimiento();
+                 String vrUbicacion=ListaProductos.get(i).getUbicacion();
                  
                  
-                 ArticulosOe vrArticulos= new ArticulosOe(vrCodArticulo, "", vrDescrip, vrCantidad, "", vrCliente,vrLote);
-                 datosOe= new ArrayList<ArticulosOe>();
+                 
+                 ArticulosOe vrArticulos= new ArticulosOe(vrCodArticulo, vrNumSeg, vrDescrip, vrCantidad, "", vrCliente, vrLote, vrFechaVencimiento, vrUbicacion);
+                 //datosOe= new ArrayList<ArticulosOe>();
                  datosOe.add(vrArticulos);               
              }            
          }
@@ -98,7 +104,7 @@ public class ProcesarTablaIngreso extends HttpServlet {
          return datosOe;
     }
     
-    void CrearArchivoRCP(HttpServletRequest request, HttpServletResponse response,String codSeg,String coment)  throws ServletException, IOException 
+    void CrearArchivoRCP(HttpServletRequest request, HttpServletResponse response,String coment)  throws ServletException, IOException 
     {
          String idProv="";
          String vrHoraFinal="";
@@ -162,7 +168,7 @@ public class ProcesarTablaIngreso extends HttpServlet {
                         salArch.print(cabeceraRecepcion.orden(fechaActual+horaActual.trim()));
                         salArch.print(cabeceraRecepcion.codigoDireccionOrigen(cliente));
                         salArch.print(cabeceraRecepcion.codigoCompañia(cliente));
-                        salArch.print(cabeceraRecepcion.referenciaOrden(codSeg));
+                        salArch.print(cabeceraRecepcion.referenciaOrden(vrNumPed));
                         salArch.print(cabeceraRecepcion.fechaTransmision(fechaActual.trim()));
                         salArch.print(cabeceraRecepcion.fechaOrden(fechaActual.trim()));
                         salArch.print(cabeceraRecepcion.tipoOrden());
@@ -173,8 +179,6 @@ public class ProcesarTablaIngreso extends HttpServlet {
                         salArch.println();
                     }
                     
-                    
-                    
                     String numLineaF=String.format("%05d", f+1);
                     salArch.print(detalleRecepcion.dataMap());
                     salArch.print(detalleRecepcion.interfaceActionCode(fechaActual+horaActual.trim(),numLineaF));
@@ -182,10 +186,12 @@ public class ProcesarTablaIngreso extends HttpServlet {
                     salArch.print(detalleRecepcion.orden(fechaActual+horaActual.trim()));
                     salArch.print(detalleRecepcion.lineaOrden(numLineaF));
                     salArch.print(detalleRecepcion.codigoItem(datosOe.get(f).getArticuloPropietario()));
-                    salArch.print(detalleRecepcion.lote(""));
+                    salArch.print(detalleRecepcion.lote(datosOe.get(f).getLote()));
                     salArch.print(detalleRecepcion.cantidadOrdenada(datosOe.get(f).getCantidad()));
                     salArch.print(detalleRecepcion.fechaOrden(fechaActual.trim()));
-                    salArch.print(detalleRecepcion.company(datosOe.get(f).getCliente()));                                       
+                    salArch.print(detalleRecepcion.company(datosOe.get(f).getCliente())); 
+                    salArch.print(detalleRecepcion.fechaVencimiento(datosOe.get(f).getFechavencimiento()));
+                    salArch.print(detalleRecepcion.ubicacion(datosOe.get(f).getUbicacion()));
                     salArch.println();
                 }
 
@@ -202,7 +208,7 @@ public class ProcesarTablaIngreso extends HttpServlet {
                 
             }
          }else{
-             request.getSession().setAttribute("codigoSeguimiento", codSeg);
+             request.getSession().setAttribute("codigoSeguimiento", "");
              request.getSession().setAttribute("proveedor", idProv);
              request.getSession().setAttribute("comentario", coment);
              request.getSession().setAttribute("msgError", "Debe ingresar artículos para la orden.");

@@ -120,7 +120,7 @@ public class ArticulosServlet extends HttpServlet {
                 }
             }
         }else{
-            ArticulosOe artOe= new ArticulosOe(codArtClte, codArt, descripcion, cantidad, usuario, cliente,lote);
+            ArticulosOe artOe= new ArticulosOe(codArtClte, codArt, descripcion, cantidad, usuario, cliente,lote,"","");
             int repetido=0;
             ArrayList<ArticulosOe> datosOe = (ArrayList<ArticulosOe>) request.getSession().getAttribute("datosOe");
             //Validar artículo repetido

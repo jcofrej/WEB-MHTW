@@ -173,4 +173,57 @@ public class detalleRecepcion {
             }
             return cadena;
         }
+        
+        public static String fechaVencimiento(String cadena) throws ParseException{
+            int largo =14;
+            String retorno="";
+        
+            SimpleDateFormat formateador = new SimpleDateFormat("ddMMyyyy");
+            SimpleDateFormat formato = new SimpleDateFormat("yyyyMMdd");
+            
+            if (!cadena.equals(""))
+            {
+                retorno = formato.format(formateador.parse(cadena));
+                if(retorno.length()>largo)
+                {
+
+                }
+                else
+                {
+                    while (retorno.length()<largo)
+                    {
+                        retorno+="0";
+                    }
+
+                }
+            }
+            else
+            {
+               int f=0;
+               while (f<largo)
+                {
+                    retorno+="0";
+                    f++;
+                }  
+            }
+            
+            return retorno;
+        }
+              
+        public static String ubicacion(String cadena){
+            int largo =25;
+            if(cadena.length()>largo)
+            {
+                
+            }
+            else
+            {
+                while (cadena.length()<largo)
+                {
+                    cadena+=" ";
+                }
+            
+            }
+            return cadena;
+        }
 }

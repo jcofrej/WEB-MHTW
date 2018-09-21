@@ -1,6 +1,7 @@
 
 package Modelo;
 
+import static cl.webmh.util.GENEFechas.FechaSinSeparacion;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -143,6 +144,7 @@ public class detalleDespacho {
         public static String fechaOrden(String cadena) throws ParseException{
             int largo =14;
             String retorno;
+            cadena=FechaSinSeparacion(cadena);
             SimpleDateFormat formateador = new SimpleDateFormat("ddMMyyyy");
             SimpleDateFormat formato = new SimpleDateFormat("yyyyMMdd");
             retorno = formato.format(formateador.parse(cadena));

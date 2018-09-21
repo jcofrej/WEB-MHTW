@@ -178,6 +178,8 @@
                             <th class="WF80">Lote</th>
                             <th class="WF170">Descripción</th>
                             <th class="WF80">Cantidad</th>
+                            <th class="WF80">Fecha de Vencimiento</th>
+                            <th class="WF80">Ubicación</th>
                             <th class="WF170">Observación</th>
                         </tr>
                     <%
@@ -191,16 +193,18 @@
                         <td><%=ListaProductos.get(i).getLote()%></td>
                         <td><%=ListaProductos.get(i).getDescripcion()%></td>
                         <td><%=ListaProductos.get(i).getCantidad()%></td>
+                        <td><%=ListaProductos.get(i).getFechaVencimiento() %></td>
+                        <td><%=ListaProductos.get(i).getUbicacion() %></td>
                         <td><%=ListaProductos.get(i).getObservacion() %></td>
                     </tr>
                     <%}%>
                     <tr>
-                        <td colspan="8" style="text-align: center" > 
+                        <td colspan="10" style="text-align: center" > 
                         
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="8" style="text-align: center" > 
+                        <td colspan="10" style="text-align: center" > 
                         <form action="#" method="post" name="MWEBProcesarTablaIngreso" enctype="multipart/form-data" > 
                             <input type="submit" value="Procesar" class="boton" onclick="if (confirm('Desea Procesar el Archivo')){ProcesarTabla();}else{ LimpiarPagina(); }"
                         </form>    
